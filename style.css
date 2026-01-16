@@ -1,67 +1,270 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color:rgb(169, 118, 216);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container{
-    padding: 50px;
-    width: 250px;
-    background-color: antiquewhite;
-    border-radius: 12px;
-}
-form{
-    margin: 2rem 0 2rem 0;
-}
-form input,select,button{
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 0.75rem;
-}
-form input{
-    border: 1px solid rgb(171, 167, 167);
-    height: 2.5rem;
-    font-size: 1rem;
-    padding-left: 0.5rem;
-}
-.dropdown{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-}
-.select-container img{
-    width: 2.75rem;
-}
-.select-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    border-radius:0.5rem ;
-    border: 1px solid rgb(156, 155, 155);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.select-container select{
-    font-size: 1rem;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e1e1e4;
 }
 
-.msg{
-    margin: 2rem 0 2rem 0;
-    font-size: 1.2rem;
+.container {
+  background: #f1f3f9;
+  padding: 30px;
+  border-radius: 14px;
+  width: 390px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-button{
-    margin-top: 1.75rem;
-    height: 3rem;
-    background-color: rgb(99, 54, 140);
-    color: aliceblue;
-    font-size: 1rem;
-    cursor:pointer;
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
+
+/* Amount box */
+.amount p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.amount input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #6d6a6a;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Dropdown section */
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dropdown p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ✅ Swap icon */
+.dropdowns i {
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 22px;
+  color: #59595a;
+  transition: 0.2s ease;
+}
+
+.dropdowns i:hover {
+  transform: scale(1.2);
+  color: #2e2d2d;
+}
+
+/* ✅ Custom Select Dropdown */
+.custom-select {
+  border: 2px solid #6d6a6a;
+  border-radius: 10px;
+  position: relative;
+  width: 150px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 999;
+}
+
+/* Selected value box */
+.selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.selected .flag {
+  width: 30px;
+  height: 22px;
+  border-radius: 4px;
+}
+
+.selected .code {
+  font-weight: 600;
+  flex: 1;
+  font-size: 15px;
+}
+
+.selected .arrow {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ✅ Options dropdown list */
+.options {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  padding: 5px 0;
+}
+
+/* Option item */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option img {
+  width: 28px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.option span {
+  font-weight: 500;
+}
+
+.option:hover {
+  background: #f2f2f2;
+}
+
+/* Hide dropdown options */
+.hidden {
+  display: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #59595a;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #2e2e2f;
+}
+
+/* Message */
+.msg {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ✅ Top header */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ✅ Dark mode toggle button */
+.theme-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffff;
+  transition: 0.2s;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  background: #59595a;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+  background: #2e2e2f;
+  color:#fff
+
+
+}
+
+/* ✅ Smooth mode transition */
+body,
+.container,
+.selected,
+.options,
+.amount input {
+  transition: 0.3s ease;
+}
+
+/* ✅ DARK MODE */
+body.dark {
+  background: #121212;
+}
+
+body.dark .container {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .amount input {
+  background: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .selected {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+
+body.dark .options {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+
+body.dark .option:hover {
+  background: #3a3a3a;
+}
+
+body.dark button {
+  background: #59595a;
+}
+
+body.dark button:hover {
+  background: #2e2e2f;
+}
+
+body.dark .theme-btn {
+  color: #fff;
+}
+
+body.dark .dropdowns i {
+  color: #ffff;
+}
+
